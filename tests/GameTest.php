@@ -45,4 +45,17 @@ class GameTest extends TestCase
 
         $this->assertSame(10, $result->getResult());
     }
+
+    /**
+     * @test
+     */
+    public function mustSumPlayersOptions()
+    {
+        $player1 = new Player('player1', Player::ODD, 3);
+        $player2 = new Player('player2', Player::EVEN, 5);
+
+        $game = new Game($player1, $player2);
+
+        $this->assertSame(8, $game->sumPlayersOptions());
+    }
 }
