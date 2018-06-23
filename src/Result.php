@@ -6,7 +6,6 @@
 
 namespace EvenOrOdd;
 
-
 use EvenOrOdd\Players\PlayerBase;
 use EvenOrOdd\Players\Winner;
 

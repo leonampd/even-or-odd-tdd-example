@@ -6,7 +6,6 @@
 
 namespace EvenOrOdd\Players;
 
-
 interface PlayerBase
 {
     public function getName() : string;

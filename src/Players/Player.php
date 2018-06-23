@@ -61,6 +61,4 @@ final class Player implements PlayerBase
     {
         return $this->value;
     }
-
-
 }
