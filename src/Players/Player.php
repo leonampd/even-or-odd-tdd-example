@@ -4,10 +4,11 @@
  * @package PHP
  */
 
-namespace EvenOrOdd;
+namespace EvenOrOdd\Players;
 
+use EvenOrOdd\Players\PlayerBase;
 
-final class Player
+final class Player implements PlayerBase
 {
     const ODD = 'odd';
     const EVEN = 'even';
@@ -45,4 +46,21 @@ final class Player
         $this->opt = $opt;
         $this->value = $value;
     }
+
+    public function getName(): string
+    {
+        return $this->name;
+    }
+
+    public function getOption(): string
+    {
+        return $this->opt;
+    }
+
+    public function getValue(): int
+    {
+        return $this->value;
+    }
+
+
 }

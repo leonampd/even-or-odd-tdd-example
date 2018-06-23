@@ -7,7 +7,8 @@
 namespace EvenOrOdd\Test;
 
 use EvenOrOdd\Game;
-use EvenOrOdd\Player;
+use EvenOrOdd\Players\Winner;
+use EvenOrOdd\Players\Player;
 use PHPUnit\Framework\TestCase;
 
 class GameTest extends TestCase
@@ -24,10 +25,10 @@ class GameTest extends TestCase
 
         $winner = $game->play($player1, $player2);
         $this->assertInstanceOf(
-            Player::class,
+            Winner::class,
             $winner
         );
 
-        $this->assertEquals($player2, $winner);
+        $this->assertSame($winner->getResult(), 2);
     }
 }
