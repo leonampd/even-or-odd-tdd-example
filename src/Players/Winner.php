@@ -47,5 +47,8 @@ final class Winner implements PlayerBase
         return $this->result;
     }
 
-
+    public function getPlayer() : Player
+    {
+        return $this->player;
+    }
 }

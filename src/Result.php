@@ -32,4 +32,9 @@ class Result
     {
         return $this->winner->getResult();
     }
+
+    public function getWinner() : Winner
+    {
+        return $this->winner;
+    }
 }

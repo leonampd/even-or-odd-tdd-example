@@ -42,7 +42,15 @@ class Game
     public function play() : Result
     {
         $sumResult = $this->sumPlayersOptions();
-        $winner = new Winner($this->player2, $sumResult);
+        if (
+            $this->player1->getOption() === Player::EVEN &&
+            $this->resultIsEven()
+        ) {
+            $winner = new Winner($this->player1, $sumResult);
+        } else {
+            $winner = new Winner($this->player2, $sumResult);
+        }
+
         return new Result([$this->player1, $this->player2], $winner);
     }
 }
