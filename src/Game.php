@@ -6,14 +6,12 @@
 
 namespace EvenOrOdd;
 
+use EvenOrOdd\Player;
 
 class Game
 {
-    public function play(array $player1, array $player2) : array
+    public function play(Player $player1, Player $player2) : Player
     {
-        return [
-            'result' => 2,
-            'winner' => 'player2'
-        ];
+        return new Player('player2', Player::EVEN, 1);
     }
 }

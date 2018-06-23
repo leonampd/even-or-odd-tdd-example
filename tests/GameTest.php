@@ -7,6 +7,7 @@
 namespace EvenOrOdd\Test;
 
 use EvenOrOdd\Game;
+use EvenOrOdd\Player;
 use PHPUnit\Framework\TestCase;
 
 class GameTest extends TestCase
@@ -16,14 +17,17 @@ class GameTest extends TestCase
      */
     public function playerEvenWins()
     {
-        $player1 = ['opt' => 'odd', 'value' => 1];
-        $player2 = ['opt' => 'even', 'value' => 1];
+        $player1 = new Player('player1', Player::ODD, 1);
+        $player2 = new Player('player2', Player::EVEN, 1);
 
         $game = new Game;
 
-        $this->assertEquals(
-            ['result' => 2, 'winner' => 'player2'],
-            $game->play($player1, $player2)
+        $winner = $game->play($player1, $player2);
+        $this->assertInstanceOf(
+            Player::class,
+            $winner
         );
+
+        $this->assertEquals($player2, $winner);
     }
 }
