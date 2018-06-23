@@ -28,9 +28,14 @@ class Game
         $this->player2 = $p2;
     }
 
+    public function sumPlayersOptions() : int
+    {
+        return $this->player1->getValue() + $this->player2->getValue();
+    }
+
     public function play() : Result
     {
-        $sumResult = $this->player2->getValue() + $this->player1->getValue();
+        $sumResult = $this->sumPlayersOptions();
         $winner = new Winner($this->player2, $sumResult);
         return new Result([$this->player1, $this->player2], $winner);
     }
