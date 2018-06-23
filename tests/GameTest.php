@@ -58,4 +58,17 @@ class GameTest extends TestCase
 
         $this->assertSame(8, $game->sumPlayersOptions());
     }
+
+    /**
+     * @test
+     */
+    public function mustKnowIfResultIsEvenOrOdd()
+    {
+        $player1 = new Player('player1', Player::ODD, 3);
+        $player2 = new Player('player2', Player::EVEN, 5);
+
+        $game = new Game($player1, $player2);
+
+        $this->assertTrue($game->resultIsEven());
+    }
 }
