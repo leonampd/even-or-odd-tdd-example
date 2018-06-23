@@ -28,6 +28,12 @@ class Game
         $this->player2 = $p2;
     }
 
+    public function resultIsEven() : bool
+    {
+        $sum = $this->sumPlayersOptions();
+        return ($sum % 2) == 0 ? true : false;
+    }
+
     public function sumPlayersOptions() : int
     {
         return $this->player1->getValue() + $this->player2->getValue();
