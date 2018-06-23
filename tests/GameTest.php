@@ -31,4 +31,18 @@ class GameTest extends TestCase
 
         $this->assertSame($winner->getResult(), 2);
     }
+
+    /**
+     * @test
+     */
+    public function mustReturnCorrectResult()
+    {
+        $player1 = new Player('player1', Player::ODD, 5);
+        $player2 = new Player('player2', Player::EVEN, 5);
+
+        $game = new Game();
+        $result = $game->play($player1, $player2);
+
+        $this->assertSame(10, $result->getResult());
+    }
 }
