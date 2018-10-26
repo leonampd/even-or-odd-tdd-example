@@ -7,6 +7,7 @@
 namespace EvenOrOdd\Players;
 
 use EvenOrOdd\Players\PlayerBase;
+use \InvalidArgumentException;
 
 final class Player implements PlayerBase
 {
@@ -35,13 +36,13 @@ final class Player implements PlayerBase
      * @param string $opt
      * @param int $value
      *
-     * @throws \Exception
+     * @throws \InvalidArgumentException
      */
     public function __construct(string $name, string $opt, int $value)
     {
         $this->name = $name;
         if ($opt !== self::EVEN && $opt !== self::ODD) {
-            throw new \Exception('Invalid option');
+            throw new \InvalidArgumentException('Invalid option');
         }
         $this->opt = $opt;
         $this->value = $value;
