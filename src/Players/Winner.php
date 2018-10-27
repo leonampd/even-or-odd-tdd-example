@@ -26,17 +26,17 @@ final class Winner implements PlayerBase
 
     public function getName(): string
     {
-        $this->player->getName();
+        return $this->player->getName();
     }
 
     public function getOption(): string
     {
-        $this->player->getOtion();
+        return $this->player->getOtion();
     }
 
     public function getValue(): int
     {
-        $this->player->getValue();
+        return $this->player->getValue();
     }
 
     /**
@@ -45,10 +45,5 @@ final class Winner implements PlayerBase
     public function getResult(): int
     {
         return $this->result;
-    }
-
-    public function getPlayer() : Player
-    {
-        return $this->player;
     }
 }

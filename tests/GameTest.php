@@ -30,6 +30,10 @@ class GameTest extends TestCase
         );
 
         $this->assertSame($result->getResult(), 2);
+        $this->assertEquals(
+            $result->getWinner()->getName(),
+            $player2->getName()
+        );
     }
 
     /**
@@ -70,20 +74,5 @@ class GameTest extends TestCase
         $game = new Game($player1, $player2);
 
         $this->assertTrue($game->resultIsEven());
-    }
-
-    /**
-     * @test
-     */
-    public function mustReturnTheWinner()
-    {
-        $player1 = new Player('player1', Player::ODD, 3);
-        $expectedWinner = new Player('player2', Player::EVEN, 5);
-
-        $game = new Game($player1, $expectedWinner);
-
-        $result = $game->play();
-
-        $this->assertEquals($expectedWinner, $result->getWinner()->getPlayer());
     }
 }
